@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #0F172A;
+    color: #F8FAFC;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+/* menu de navegação*/
+header{
+    background-color: #af08b5d7;
+    padding: 20px 60px;
+
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+    .logo img{
+    width: 70px;
+    height:70px;
+    border-radius: 90%;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav a:hover{
+    color: #ec48c3;
+}
+
+
+/*** Hero Section
+*/
+
+#inicio{
+    font-size: 1.2rem;
+    min-height: 100vh;
+
+}
+
+h1.titulo{
+    padding: 30px 5px;
+    text-align: center;
+    font-size: 30px;
+    color: hsl(0, 0%, 100%);
+}
+
+.subtitle{
+   padding: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: lab(38.24% 50.71 -55.79);
+}
+
+.subtitle:hover{
+    color: #ec48c3;
+
+}
+.p-inicio{
+    padding: 16px;
+    font-size: 16px;
+    text-align: center;
+    
+}
+
+
+.hero-image{
+    width:100%;
+    border-radius:20px;
+}
+
+/** 
+**/
+section{
+    padding: 15px;
+    margin-bottom: 15px;
+
+}
+
+p{
+    padding: 15px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: hsl(218, 7%, 78%);
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+
+.card{
+
+    width: 280px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #1E293B;
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.cards{
+
+transition:.3s;
+
+}
+
+footer{
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.link-footer{
+    
+    text-decoration: none;
+    color: #ec48c3;
+}
+
+.direitos {
+    margin-top: 20px;
+    font-size: 14px;
+    color: hsl(218, 7%, 78%);
+}
