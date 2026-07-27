@@ -1,145 +1,354 @@
-*{
+/*essa estilização redefine a padronização da página: remove margem
+ e espaçamentos padrão, facilitando o calculo do tamanho dos elementos*/
+* {
     margin: 0;
     padding: 0;
+    /*cria espaço interno*/
     box-sizing: border-box;
 }
 
-body{
-    background-color: #0F172A;
+/*é a estilização de todo conteúdo da página: cor de fundo, font, 
+formato das letras e o espaçamento entre as linhas 
+*/
+body {
+    background-color: #0F172A; 
+    /* define a cor de fundo de toda a página*/
     color: #F8FAFC;
+    /* define a cor do texto*/
     font-family: Arial, Helvetica, sans-serif;
+    /* define a fonte das letras. Caso o navegador não tenha reconhça o primeiro estilo da fonte
+    ele vai executar as fontes recorrentes*/
     line-height: 1.6;
+    /*define o espaçamento entre as linhas do texto*/
 }
+
 
 /* menu de navegação*/
-header{
-    background-color: #af08b5d7;
-    padding: 20px 60px;
-
-}
-
-nav ul{
+header {
+    /*estiliza a tag semântica usada na faixa externa (ou a cabeça) do site.
+     Tudo que tiver dentro da hader*/
+    
     display: flex;
+    /*ativa o flexbox para organizar e direcionar os elementos*/
+    /*aqui temos o chamado Flexbox. Que é o conjunto de propriedades do CSS criadas para organizar 
+    elementos dentro de uma contaêiner(caixa)*/
     justify-content: center;
+    /*alinha os elementos na horizontal*/
     align-items: center;
+    /*ainha os elementos na vertical.*/
+    /*Esses 2 não fazem parte do Flexbox */
+    padding: 20px 40px;
+    /*cria espaço interno*/
+    background-color: #af08b5d7;
+    /*define a cor de fundo do header*/
+
+}
+
+nav ul {
+    display: flex;
+    /*ativa o flebox para organiza e direcionar os elementos*/
+    align-items: center;
+    /* alinha os itens verticalmente */
     gap: 30px;
+    /* espaço entre os itens da lista */
     list-style: none;
+    /* remove as bolinhas da lista */
 }
 
-    .logo img{
-    width: 70px;
-    height:70px;
-    border-radius: 90%;
-}
-
-nav a{
+nav a { 
     text-decoration: none;
+    /* remove ou adiciona a decoração do texto. Nesse caso, remove o sublinhado que fica, 
+    por padrão a abaixo do link */
     color: white;
+    /* define a cor do texto */
     font-weight: bold;
+    /* deixa o texto em negrito */
 }
 
-nav a:hover{
-    color: #ec48c3;
+nav a:hover {
+    /* efeito aplicado quando o mouse passa sobre o link */
+    text-decoration: underline;
+    /* adiciona um sublinhado ao passar o mouse sobre o link */
+    color: #FFD6F7;
+    /* altera a cor do link ao passar o mouse */
 }
 
-
-/*** Hero Section
-*/
-
-#inicio{
+/*** Hero Section*/
+#inicio {
     font-size: 1.2rem;
     min-height: 100vh;
-
 }
 
-h1.titulo{
+h1.hero-titulo {
     padding: 30px 5px;
     text-align: center;
     font-size: 30px;
-    color: hsl(0, 0%, 100%);
+    color: white;
 }
 
-.subtitle{
-   padding: 20px;
+h1.hero-titulo {
+    color: white;
+    animation: brilho 2s infinite ease-in-out;
+}
+/* cria uma animação de brilho no texto */
+@keyframes brilho {
+    0%, 
+    /* inicio da animação */
+    100%
+    /* meio da animação */
+     {
+        text-shadow: /* diciona sombra ao texto.*/
+            0 0 5px #EC4899,
+            0 0 10px #EC4899;
+            /* brilho mais suave */
+    }
+
+    50% {
+        text-shadow:
+            0 0 10px #EC4899,
+            0 0 20px #EC4899,
+            0 0 35px #EC4899;
+            /* brilho mais intenso */
+    }
+}
+
+.hero-subtitle {
+    padding: 20px;
     font-size: 1.2rem;
     text-align: center;
     color: lab(38.24% 50.71 -55.79);
 }
 
-.subtitle:hover{
+.hero-subtitle:hover {
     color: #ec48c3;
 
 }
-.p-inicio{
+
+.hero-p-inicio {
     padding: 16px;
     font-size: 16px;
     text-align: center;
-    
+
 }
 
 
-.hero-image{
-    width:100%;
-    border-radius:20px;
+.hero-image {
+    width: 100%;
+    border-radius: 20px;
+
 }
 
-/** 
-**/
-section{
-    padding: 15px;
+
+/** sobre mim **/
+
+section {
+    padding: 30px;
     margin-bottom: 15px;
 
 }
 
-p{
+.h2-sobre-mim-titulo,
+.h2-footer {
+    color: #ec48c3;
+    margin-left: 12%;
+    text-align: left;
+
+}
+
+.p-sobre-mim,
+.p1-footer {
     padding: 15px;
+    margin-left: 10%;
     font-size: 1.2rem;
-    text-align: center;
+    text-align: left;
     color: hsl(218, 7%, 78%);
 }
 
-.cards{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
+p {
+
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: left;
+    color: hsl(218, 7%, 78%);
+}
+
+.linha-coracao {
+    width: 80%;
+    margin: 10px auto;
+    border: none;
+    border-top: 2px solid #EC4899;
+    position: relative;
+}
+
+.linha-coracao::after {
+    content: "💜";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    background-color: #0F172A;
+    padding: 0 10px;
+    font-size: 22px;
+
+}
+
+.linha-coracao:hover::after {
+    text-shadow:
+        0 0 10px #EC4899,
+        0 0 20px #EC4899,
+        0 0 30px #EC4899;
+        /*
+.linha-coracao  → seleciona o elemento com essa classe
+:hover          → quando o mouse passa sobre o elemento
+::after         → seleciona o conteúdo criado depois do elemento
+*/
+}
+
+@keyframes bater {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.3);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     justify-content: center;
 }
 
 
-.card{
+.cards-competencias-tecnicas {
+    display: grid;
+    /* ativa o Grid para organizar os elementos em linhas e colunas */
+    grid-template-columns: repeat(4, 1fr);
+    /* cria 3 colunas de mesmo tamanho */
+    gap: 20px;
+    justify-content: center;
+}
 
-    width: 280px;
-    padding: 20px;
-    border-radius: 15px;
+.card {
+
     background-color: #1E293B;
+    padding: 25px;
+    border-radius: 15px;
 }
 
-.card:hover{
+.card:hover {
 
-transform:translateY(-10px);
-
-}
-
-.cards{
-
-transition:.3s;
+    transform: translateY(-10px);
 
 }
 
-footer{
+.cards {
+
+    transition: .3s;
+
+}
+
+.h2-card,
+.h2-footer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ff44d0;
+
+}
+
+
+.linha-h2subtitle {
+    width: 200px;
+    margin-left: 11px;
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right,
+            transparent,
+            #EC4899,
+            transparent);
+}
+
+/* footer */
+footer {
     padding: 10px;
     margin-top: 20px;
+
+
+}
+
+.link-footer {
     text-align: center;
-}
-
-.link-footer{
-    
     text-decoration: none;
-    color: #ec48c3;
+    font-size: 20px;
+    color: #b50088;
 }
 
-.direitos {
+.link-footer a:hover {
+    color: #df51c2;
+
+}
+
+.p-footer {
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 20px;
+    text-align: center;
     color: hsl(218, 7%, 78%);
+}
+
+.form-contato {
+    max-width: 700px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-contato label {
+    color: #F8FAFC;
+    font-weight: bold;
+}
+
+.form-contato input,
+.form-contato textarea {
+    padding: 15px;
+    border: 2px solid #EC4899;
+    border-radius: 10px;
+    background-color: #1E293B;
+    color: white;
+    font-size: 1rem;
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+    outline: none;
+    border-color: #ff44d0;
+    box-shadow: 0 0 10px #EC4899;
+}
+
+.form-contato textarea {
+    resize: vertical;
+    /*redimensiona um elemento na página.*/
+}
+
+.form-contato button {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #EC4899;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.form-contato button:hover {
+    background-color: #ff44d0;
+    transform: translateY(-3px);
 }
