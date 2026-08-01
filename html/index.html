@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="shortcut icon" sizes="32x32" href="../imgs/logo/apple-touch-icon.png" type="image/x-icon">
-    <title>Meu portifólio</title>
+    <title>Meu portfólio</title>
 </head>
 
 <body>
     <header>
         <!--menu de navegação-->
         <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
+            <ul id="header">
+                <li><a href="#inicio">Início</a></li>
                 <li><a href="#sobre">Sobre Mim</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#conhecimentos">Competências Técnicas</a></li>
@@ -29,13 +29,18 @@
     <!--hero section-->
     <main>
         <section id="inicio">
-            <h1 class="hero-titulo">Seja Bem - vindo(a) ao meu portifólio!</h1>
+            <h1 class="hero-titulo">Seja Bem - vindo(a) ao meu portfólio!</h1>
             <p class="hero-p-inicio"> Aqui você encontrará informações sobre meus projetos, habilidades e experiências.
                 Sinta-se à vontade
                 para explorar e conhecer mais sobre meu trabalho. </p>
             <h3 class="hero-subtitle"> Técnica de Informática |
                 Estudante de ADS | Desenvolvimento Web | Governança de TI |
-                Infraestrutura | Cibersegurança</h3>
+                Infraestrutura | Cibersegurança
+                <div>
+                    <button type="button" id="btnSaibaMais">Saiba Mais</button>
+                </div>
+            </h3>
+
             <figure>
                 <img class="hero-image" src="../imgs/projeto/ChatGPT Image 25 de jul. de 2026, 22_05_12.png"
                     alt="Foto de Letícia Leão" class="foto tecnologia">
@@ -60,10 +65,9 @@
                     Desde então, venho estudando continuamente, fazendo cursos de Frontend, Backend, Suporte Técnico,
                     Redes e outras áreas da tecnologia. Esse aprendizado me levou à minha primeira oportunidade em TI e
                     continua impulsionando meu desenvolvimento profissional.</p>
-
-
                 <p>Hoje sigo aprendendo, encarando novos desafios e construindo uma carreira baseada em curiosidade,
                     dedicação e vontade de evoluir. </p>
+                <button type="button" id="btnVoltar">Início</button>
             </div>
         </section>
 
@@ -75,7 +79,7 @@
 
 
             <div class="h2-card">
-                <h2> <span>💜</span> Àreas de Interesses</h2>
+                <h2> <span>💜</span> Áreas de Interesse</h2>
             </div>
             <hr class="linha-h2subtitle">
             <p>
@@ -243,61 +247,84 @@
 
         <div class="linha-coracao"></div>
 
+        <footer>
+            <section id="contato">
+                <p class="p-footer"> Ficarei feliz em conversar sobre tecnologia, compartilhar conhecimentos ou conhecer
+                    novas
+                    oportunidades.
+                </p>
 
-        <!--CEP-->
-        <section id="viacep">
+                <p class="link-footer">
+                    <a class="link-footer"
+                        href="https://www.linkedin.com/in/leticia-le%C3%A3o-01b91a181?lipi=urn%3Ali%3Apage%3Ad_flagship3_messaging_conversation_detail%3Bm70dELJxTb269q8KDpa0%2Fw%3D%3D"
+                        target="_blank">LinkedIn</a> |
+                    <a class="link-footer" href="https://github.com/leticialeao25" target="_blank">GitHub</a> |
+                    <a class="link-footer" href="#" target="_blank">Instagram</a> |
+                </p>
+                <h2 class="h2-footer">📩 Entre em contato</h2>
 
-            <h2 class="h2-footer">📍 Buscar CEP</h2>
+                <!---formulário de contato--->
+                <form class="form-contato">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
 
-            <p class="p1-footer">
-                Nesta seção você pode pesquisar um CEP e visualizar automaticamente as informações do endereço
-                utilizando a API ViaCEP.
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="6" placeholder="Escreva sua mensagem..."
+                        required></textarea>
+
+
+                    <button type="submit">Enviar mensagem</button>
+
+                </form>
+            </section>
+
+            <div class="linha-coracao"></div>
+
+            <div id="notificacao" class="notificacao">
+                💜 Obrigada por visitar meu portfólio!
+            </div>
+
+            <!--CEP-->
+            <section id="viacep">
+
+                <h2 class="h2-footer">📍 LOCALIZAÇÃO</h2>
+
+                <p class="p1-footer">
+                    Digite um CEP válido para consultar automaticamente as informações de localização correspondentes.
+                </p>
+
+                <div class="caixa-cep">
+
+                    <label class="label-cep" for="cep">CEP</label>
+                    <input class="caixa-input-cep" type="text" id="cep" placeholder="Ex.: 20040002" maxlength="8">
+
+                    <div class="botons-cep">
+                        <button type="button" id="btnBuscarCep">Buscar CEP</button>
+
+                    </div>
+
+                    <div id="resultadoCep"></div>
+            </section>
+
+
+            <div>
+                <button type="button" id="btnVoltarInicio">Voltar ao Início</button>
+            </div>
+
+
+            <div class="linha-coracao"></div>
+
+            <p class="p-footer">© 2026 Letícia Leão. Todos os direitos reservados.
             </p>
-        </section>
-
+        </footer>
     </main>
 
-    <div class="linha-coracao"></div>
 
-    <footer>
-        <section id="contato">
-            <h2 class="h2-footer">Contato</h2>
-            <p class="p-footer"> Ficarei feliz em conversar sobre tecnologia, compartilhar conhecimentos ou conhecer
-                novas
-                oportunidades.
-            </p>
-
-            <p class="link-footer">
-                <a class="link-footer"
-                    href="https://www.linkedin.com/in/leticia-le%C3%A3o-01b91a181?lipi=urn%3Ali%3Apage%3Ad_flagship3_messaging_conversation_detail%3Bm70dELJxTb269q8KDpa0%2Fw%3D%3D"
-                    target="_blank">LinkedIn</a> |
-                <a class="link-footer" href="https://github.com/leticialeao25" target="_blank">GitHub</a> |
-                <a class="link-footer" href="#" target="_blank">Instagram</a> |
-            </p>
-            <h2 class="h2-footer">📩 Entre em contato</h2>
-
-        <!---formulário de contato--->
-            <form class="form-contato">
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-
-                <label for="mensagem">Mensagem</label>
-                <textarea id="mensagem" name="mensagem" rows="6" placeholder="Escreva sua mensagem..."
-                    required></textarea>
-
-                <button type="submit">Enviar mensagem</button>
-
-            </form>
-        </section>
-
-        <div class="linha-coracao"></div>
-    <p class="p-footer">© 2026 Letícia Leão. Todos os direitos reservados.</p>
-    </footer>
-
-    
+    <script src="../js/script.js"></script>
+    <script src="../js/viacep.js"></script>
 </body>
 
 </html>
